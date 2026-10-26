@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "id": null,
+  "fixture": false,
+  "theme": {
+    "id": null,
+    "revision": "r1",
+    "passportId": "passport"
+  },
+  "planId": "genre-plan",
+  "assets": [
+    {
+      "id": "score",
+      "type": "score",
+      "path": "evidence/source-edition.pdf",
+      "sha256": null,
+      "themeRevision": "r1",
+      "parents": []
+    },
+    {
+      "id": "passport",
+      "type": "passport",
+      "path": "evidence/theme-passport.json",
+      "sha256": null,
+      "themeRevision": "r1",
+      "parents": [
+        "score"
+      ]
+    },
+    {
+      "id": "genre-plan",
+      "type": "plan",
+      "path": "plans/genre-plan.json",
+      "sha256": null,
+      "themeRevision": "r1",
+      "parents": [
+        "passport"
+      ]
+    },
+    {
+      "id": "genre-1-blueprint",
+      "type": "blueprint",
+      "path": "plans/genre-1-blueprint.json",
+      "sha256": null,
+      "themeRevision": "r1",
+      "parents": [
+        "passport"
+      ]
+    },
+    {
+      "id": "genre-1-book",
+      "type": "book-evidence",
+      "path": "evidence/genre-1-book.json",
+      "sha256": null,
+      "themeRevision": "r1",
+      "parents": []
+    },
+    {
+      "id": "genre-1-midi",
+      "type": "midi",
+      "path": "music/genre-1.mid",
+      "sha256": null,
+      "themeRevision": "r1",
+      "parents": [
+        "genre-1-blueprint"
+      ]
+    },
+    {
+      "id": "genre-1-reference",
+      "type": "reference",
+      "path": "music/genre-1-reference.wav",
+      "sha256": null,
+      "themeRevision": "r1",
+      "parents": [
+        "genre-1-midi"
+      ],
+      "serviceId": null
+    },
+    {
+      "id": "genre-1-render",
+      "type": "render-receipt",
+      "path": "evidence/genre-1-render.json",
+      "sha256": null,
+      "themeRevision": "r1",
+      "parents": [
+        "genre-1-midi",
+        "genre-1-reference"
+      ]
+    }
+  ],
+  "genres": [
+    {
+      "id": "choose-genre-1",
+      "blueprintId": "genre-1-blueprint",
+      "bookBasis": [
+        {
+          "evidenceId": "genre-1-book"
+        }
+      ],
+      "midiId": "genre-1-midi",
+      "referenceId": "genre-1-reference",
+      "renderReceiptId": "genre-1-render",
+      "uploadRecordId": null,
+      "expectedMidi": {
+        "ppq": 480,
+        "endTick": null,
+        "tempoMPQ": null,
+        "timeSignature": null,
+        "keySignature": null,
+        "monophonicTracks": [
+          1
+        ]
+      },
+      "motifOccurrences": [],
+      "takes": []
+    }
+  ],
+  "comparisonId": null,
+  "approvals": {},
+  "spend": {},
+  "vocal": {
+    "genreId": null,
+    "selectedInstrumentalId": null,
+    "planId": null,
+    "voiceId": null,
+    "route": "selected-instrumental",
+    "coverInputId": null,
+    "takes": [],
+    "selectedTakeId": null,
+    "audioLockId": null
+  },
+  "mv": {
+    "musicMapId": null,
+    "directionId": null,
+    "directionReviewId": null,
+    "shotPlanId": null,
+    "animaticId": null,
+    "styleReviewId": null,
+    "renderId": null,
+    "finalReviewId": null,
+    "configId": null,
+    "productionShotsId": null
+  },
+  "publish": {
+    "destination": null
+  }
+}

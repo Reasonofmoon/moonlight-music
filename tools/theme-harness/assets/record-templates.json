@@ -1,0 +1,272 @@
+{
+  "note": "All examples are incomplete DRAFTS, not real evidence or approvals. Register each actual record as a separately hashed asset. Never invent a human review.",
+  "passport": {
+    "themeId": null,
+    "revision": "r1",
+    "sourceId": "score",
+    "sourceSha256": null,
+    "edition": null,
+    "rights": null,
+    "locator": {
+      "page": null,
+      "bars": null,
+      "voice": null
+    },
+    "identityStatement": null,
+    "invariants": [],
+    "allowedTransforms": [],
+    "units": [
+      {
+        "id": "primary",
+        "role": "primary_phrase",
+        "pitches": [],
+        "durationsQuarter": []
+      }
+    ],
+    "returnPolicy": {
+      "minimum": 2,
+      "sections": [
+        "statement",
+        "recap"
+      ]
+    }
+  },
+  "plan": {
+    "themeId": null,
+    "themeRevision": "r1",
+    "genreIds": [],
+    "genreBlueprintHashes": {}
+  },
+  "blueprint": {
+    "genreId": null,
+    "themeRevision": "r1",
+    "expectedMidi": {
+      "ppq": 480,
+      "endTick": null,
+      "tempoMPQ": null,
+      "timeSignature": null,
+      "keySignature": null,
+      "monophonicTracks": [
+        1
+      ]
+    },
+    "motifOccurrences": [
+      {
+        "unitId": "primary",
+        "section": "statement",
+        "track": 1,
+        "startTick": null,
+        "transpose": 0,
+        "timeScale": 1,
+        "onsetToleranceTicks": 12,
+        "durationToleranceTicks": 12
+      }
+    ]
+  },
+  "bookEvidence": {
+    "genreId": null,
+    "domain": "composition",
+    "book": null,
+    "edition": null,
+    "chapter": null,
+    "pdfPage": null,
+    "printedPage": null,
+    "principle": null,
+    "application": null,
+    "plannedBars": [],
+    "checkedForRevision": "r1",
+    "checkedAt": null
+  },
+  "renderReceipt": {
+    "midiId": null,
+    "midiSha256": null,
+    "referenceId": null,
+    "referenceSha256": null,
+    "renderer": null,
+    "roundTripEventsChecked": false,
+    "releasePolicy": null
+  },
+  "uploadRecord": {
+    "inputAssetId": null,
+    "inputSha256": null,
+    "serviceUploadId": null,
+    "captureId": null,
+    "inputBinding": {},
+    "captureBinding": {}
+  },
+  "generationRecord": {
+    "inputAssetId": null,
+    "inputSha256": null,
+    "inputServiceId": null,
+    "outputAssetId": null,
+    "outputServiceId": null,
+    "voiceId": null,
+    "observedVia": null,
+    "observedAt": null,
+    "captureId": null,
+    "controlsObserved": {},
+    "inputBinding": {},
+    "captureBinding": {},
+    "outputBinding": {}
+  },
+  "humanReview": {
+    "kind": "instrumental-theme",
+    "status": "pending",
+    "actor": {
+      "kind": "human",
+      "id": null
+    },
+    "observedAt": null,
+    "recordingId": null,
+    "targets": {},
+    "notes": null,
+    "listeningComparisonId": null,
+    "negativeControlChecked": false,
+    "occurrences": [
+      {
+        "unitId": "primary",
+        "section": "statement",
+        "start": null,
+        "end": null,
+        "referenceId": null,
+        "referenceStart": null,
+        "referenceEnd": null,
+        "foreground": false,
+        "notes": null,
+        "id": "audible-01"
+      }
+    ],
+    "bindings": {},
+    "audioHealthId": null
+  },
+  "userApproval": {
+    "kind": null,
+    "status": "pending",
+    "actor": {
+      "kind": "user",
+      "id": null
+    },
+    "observedAt": null,
+    "recordingId": null,
+    "targets": {},
+    "notes": null,
+    "bindings": {},
+    "choice": null
+  },
+  "budget": {
+    "limit": null,
+    "spent": null,
+    "nextEstimate": null,
+    "unit": null,
+    "balanceEvidenceId": null
+  },
+  "vocalPlan": {
+    "hookBindings": [
+      {
+        "unitId": "primary",
+        "carrier": null,
+        "section": null
+      }
+    ],
+    "lyricPhraseMap": [
+      {
+        "section": null,
+        "lyricLine": null,
+        "motifUnitId": "primary",
+        "rhythmAndBreaths": null
+      }
+    ],
+    "chordPlan": [],
+    "voiceId": null,
+    "inputAssetId": null,
+    "route": "selected-instrumental"
+  },
+  "audioLock": {
+    "audioId": null,
+    "sha256": null,
+    "themeRevision": "r1",
+    "durationSeconds": null,
+    "durationEvidenceId": null
+  },
+  "musicMap": {
+    "audioId": null,
+    "audioSha256": null,
+    "cues": [
+      {
+        "id": "cue-01",
+        "unitId": "primary",
+        "start": null,
+        "end": null,
+        "musicalFunction": null,
+        "visualFunction": null,
+        "relation": "statement",
+        "kind": "theme",
+        "audibleOccurrenceId": null,
+        "exceptionReason": null
+      }
+    ]
+  },
+  "direction": {
+    "bookEvidenceIds": [],
+    "concept": null
+  },
+  "shotPlan": {
+    "shots": [
+      {
+        "id": "s01",
+        "cueId": "cue-01",
+        "start": null,
+        "end": null,
+        "lyricId": null,
+        "continuityId": null,
+        "physicalCause": null,
+        "visualFunction": null
+      }
+    ]
+  },
+  "finalQC": {
+    "kind": "final-qc",
+    "status": "pending",
+    "actor": {
+      "kind": "human",
+      "id": null
+    },
+    "observedAt": null,
+    "recordingId": null,
+    "targets": {},
+    "notes": null,
+    "physicalRealismChecked": false,
+    "allUsedRangesReviewed": false,
+    "embeddedAudioMatched": false,
+    "audioComparisonMethod": null,
+    "audioComparisonEvidenceId": null,
+    "renderInputAudioId": null,
+    "bindings": {}
+  },
+  "audioHealth": {
+    "audioId": null,
+    "sha256": null,
+    "result": "pending",
+    "durationSeconds": null,
+    "captureId": null,
+    "captureBinding": {}
+  },
+  "directionBookEvidence": {
+    "domain": "direction",
+    "book": null,
+    "edition": null,
+    "chapter": null,
+    "pdfPage": null,
+    "printedPage": null,
+    "principle": null,
+    "application": null,
+    "checkedForRevision": "r1",
+    "checkedAt": null
+  },
+  "videoBatchAction": {
+    "name": null,
+    "shotNumbers": [],
+    "configSha256": null,
+    "shotsSha256": null
+  }
+}
