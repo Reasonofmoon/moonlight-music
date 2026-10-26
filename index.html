@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="달의이성의 음악 아카이브. 테마를 따라 연주곡과 한국어 보컬을 감상하세요.">
+  <meta name="referrer" content="no-referrer">
+  <title>달의이성 · Music Archive</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#library">곡 목록으로 건너뛰기</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="달의이성 Music Archive 홈">달의이성 <span>Music Archive</span></a>
+      <a href="#credits" class="quiet-link">작품과 크레딧</a>
+    </header>
+    <main>
+      <section class="intro" aria-labelledby="archive-title">
+        <div>
+          <p class="eyebrow">달의이성의 음악 기록</p>
+          <h1 id="archive-title">빛이 머무는 소리</h1>
+          <p class="intro-copy">하나의 테마에서 시작해, 서로 다른 장면으로.<br>연주곡과 한국어 보컬을 천천히 감상하세요.</p>
+          <p id="archive-summary" class="muted">음악 목록을 불러오고 있습니다.</p>
+        </div>
+        <svg class="light-art" viewBox="0 0 240 136" fill="none" aria-hidden="true" focusable="false">
+          <path d="M16 115H224M32 98H208M48 81H192" stroke="currentColor" opacity=".24"/>
+          <circle cx="150" cy="45" r="28" stroke="currentColor"/>
+          <path d="M130 25L77 115M148 17L98 115M169 25L122 115" stroke="currentColor" opacity=".55"/>
+        </svg>
+      </section>
+
+      <section id="vocal-feature" class="vocal-feature" aria-label="한국어 보컬 추천" hidden>
+        <div><span class="eyebrow">목소리로 만나는 음악</span><p><strong id="vocal-title"></strong><span class="muted">한국어 보컬 · 가사와 함께 듣기</span></p></div>
+        <button id="select-vocal" type="button" class="text-button">보컬 곡 살펴보기 <span aria-hidden="true">↗</span></button>
+      </section>
+
+      <section id="load-status" class="status-panel" aria-label="불러오기 상태">
+        <p id="load-message" role="status">음악 목록을 불러오는 중입니다.</p>
+        <button id="retry" type="button" hidden>다시 불러오기</button>
+      </section>
+      <noscript><p class="status-panel">음악 목록과 플레이어를 사용하려면 JavaScript를 켜 주세요.</p></noscript>
+
+      <div id="archive" class="archive-grid" hidden>
+        <section id="library" class="library" aria-labelledby="library-title" tabindex="-1">
+          <div class="section-heading"><h2 id="library-title">모든 곡</h2><span id="result-count" class="muted" role="status"></span></div>
+          <div class="filters">
+            <label class="search-field" for="search">곡 검색<input id="search" type="search" placeholder="제목, 장르, 테마로 검색" autocomplete="off"></label>
+            <div class="filter-row">
+              <label for="theme-filter">테마<select id="theme-filter"><option value="">전체 테마</option></select></label>
+              <label for="type-filter">유형<select id="type-filter"><option value="">모든 유형</option><option value="vocal">보컬</option><option value="instrumental">연주곡</option></select></label>
+            </div>
+          </div>
+          <ol id="track-list" class="track-list" aria-label="곡 선택"></ol>
+          <div id="empty-state" class="empty-state" hidden><p>조건에 맞는 곡이 없습니다.</p><button id="reset-filters" type="button">필터 초기화</button></div>
+          <p class="list-help muted">제목을 누르면 곡만 선택됩니다. 재생 버튼을 눌러 감상을 시작하세요.</p>
+        </section>
+
+        <aside class="listening-panel" aria-labelledby="selected-title">
+          <div class="player-heading"><span class="eyebrow">선택한 음악</span><span id="playback-state" class="state-label" role="status">선택됨</span></div>
+          <h2 id="selected-title">곡을 선택하세요</h2>
+          <p id="selected-subtitle" class="muted"></p>
+          <p id="selected-meta" class="track-meta"></p>
+          <p id="outside-filter" class="filter-notice" hidden>선택한 곡은 현재 검색 결과에 포함되지 않습니다.</p>
+          <audio id="audio" controls preload="none" aria-label="선택한 음악 재생"></audio>
+          <div class="transport"><button id="previous" type="button">이전 곡</button><button id="main-play" class="primary-button" type="button">재생</button><button id="next" type="button">다음 곡</button></div>
+          <p class="player-hint muted">이전·다음은 곡만 선택합니다. 재생이 끝나면 다음 곡으로 이어집니다.</p>
+          <p id="player-message" class="player-message" role="status" aria-live="polite"></p>
+          <div class="track-details">
+            <p id="description"></p>
+            <details id="lyrics-panel" hidden><summary>가사 보기</summary><pre id="lyrics"></pre></details>
+            <details id="production-panel"><summary>제작 노트</summary><p class="muted">조성과 BPM은 제작 시 설정한 설계값이며, 실제 음원 분석 결과가 아닙니다.</p><dl id="production-values"></dl><p id="voice-note" hidden></p></details>
+            <div id="track-links" class="track-links" hidden></div>
+            <div class="selected-source"><p class="eyebrow">테마의 출발점</p><p id="selected-theme"></p><p id="selected-source"></p><a id="selected-source-link" hidden target="_blank" rel="noopener noreferrer">작품 출처 살펴보기</a></div>
+          </div>
+        </aside>
+      </div>
+
+      <section id="credits" class="credits" aria-labelledby="credits-title">
+        <div class="section-heading"><h2 id="credits-title">작품과 크레딧</h2><span class="muted">테마별 기록</span></div>
+        <p class="muted">음악의 출발점이 된 작품과 참고 정보를 테마별로 기록합니다.</p>
+        <div id="theme-credits"></div>
+      </section>
+    </main>
+    <footer><p>달의이성 <span>Music Archive</span></p><p>감상을 위한 공개 아카이브입니다. 음악과 가사의 재사용 권한은 부여하지 않습니다.</p></footer>
+  </div>
+</body>
+</html>
